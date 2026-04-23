@@ -235,54 +235,55 @@
             <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-6"></div>
             <p class="text-center text-sm text-textLight max-w-3xl mx-auto mb-10">Pilih kategori dan estimasi waktu pengerjaan untuk melihat detail harga.</p>
         </div>
-
-        <div class="max-w-4xl mx-auto bg-white border border-blue-100 rounded-2xl shadow-sm overflow-hidden reveal">
+    
+        <div class="max-w-4xl mx-auto bg-white border border-blue-100 border-t-4 border-t-primary rounded-2xl shadow-lg overflow-hidden reveal hover:shadow-xl transition-shadow duration-300">
             
-            <div class="flex overflow-x-auto border-b border-blue-100 hide-scrollbar bg-gray-50/50">
-                <button class="tab-kategori flex-1 min-w-[120px] py-4 px-2 text-center text-sm font-semibold text-primary border-b-2 border-primary bg-white transition-colors" data-kategori="kiloan">
+            <div class="flex overflow-x-auto border-b border-blue-100 hide-scrollbar bg-gray-50/30">
+                <button class="tab-kategori flex-1 min-w-[120px] py-4 px-2 text-center text-sm font-bold text-primary border-b-2 border-primary bg-blue-50/50 transition-colors" data-kategori="kiloan">
                     Daily Kiloan
                 </button>
-                <button class="tab-kategori flex-1 min-w-[120px] py-4 px-2 text-center text-sm font-medium text-textLight border-b-2 border-transparent hover:text-primary transition-colors" data-kategori="satuan">
+                <button class="tab-kategori flex-1 min-w-[120px] py-4 px-2 text-center text-sm font-medium text-textLight border-b-2 border-transparent hover:text-primary hover:bg-gray-50 transition-colors" data-kategori="satuan">
                     Premium Satuan
                 </button>
-                <button class="tab-kategori flex-1 min-w-[120px] py-4 px-2 text-center text-sm font-medium text-textLight border-b-2 border-transparent hover:text-primary transition-colors" data-kategori="sepatutas">
+                <button class="tab-kategori flex-1 min-w-[120px] py-4 px-2 text-center text-sm font-medium text-textLight border-b-2 border-transparent hover:text-primary hover:bg-gray-50 transition-colors" data-kategori="sepatutas">
                     Shoes & Bags
                 </button>
-                <button class="tab-kategori flex-1 min-w-[120px] py-4 px-2 text-center text-sm font-medium text-textLight border-b-2 border-transparent hover:text-primary transition-colors" data-kategori="rumah">
+                <button class="tab-kategori flex-1 min-w-[120px] py-4 px-2 text-center text-sm font-medium text-textLight border-b-2 border-transparent hover:text-primary hover:bg-gray-50 transition-colors" data-kategori="rumah">
                     Households
                 </button>
             </div>
-
+    
             <div class="p-5 bg-white border-b border-blue-50 flex flex-col items-center">
-                <p class="text-xs text-textMain mb-3 font-medium">Pilih Paket:</p>
-                <div class="flex flex-wrap justify-center gap-2">
-                    <button class="btn-speed active-speed px-4 py-1.5 rounded-full border border-blue-200 text-textMain hover:border-primary hover:text-primary text-xs font-medium transition-all shadow-sm" data-speed="reguler">
+                <p class="text-xs text-textLight mb-3 font-medium uppercase tracking-wider">Pilih Paket Waktu</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button class="btn-speed active-speed px-5 py-2 rounded-full bg-primary text-white font-semibold text-xs transition-all shadow-md transform scale-105" data-speed="reguler">
                         Reguler
                     </button>
-                    <button class="btn-speed px-4 py-1.5 rounded-full border border-blue-200 text-textMain hover:border-primary hover:text-primary text-xs font-medium transition-all" data-speed="oneday">
+                    <button class="btn-speed px-5 py-2 rounded-full border border-blue-200 text-textLight hover:border-primary hover:text-primary text-xs font-medium transition-all bg-white hover:bg-blue-50/30" data-speed="oneday">
                         One Day (24 jam)
                     </button>
-                    <button class="btn-speed px-4 py-1.5 rounded-full border border-blue-200 text-textMain hover:border-primary hover:text-primary text-xs font-medium transition-all" data-speed="express">
+                    <button class="btn-speed px-5 py-2 rounded-full border border-blue-200 text-textLight hover:border-primary hover:text-primary text-xs font-medium transition-all bg-white hover:bg-blue-50/30" data-speed="express">
                         Express (6 jam)
                     </button>
-                    <button id="btnQuick" class="btn-speed px-4 py-1.5 rounded-full border border-blue-200 text-textMain hover:border-primary hover:text-primary text-xs font-medium transition-all" data-speed="quick">
+                    <button id="btnQuick" class="btn-speed px-5 py-2 rounded-full border border-blue-200 text-textLight hover:border-primary hover:text-primary text-xs font-medium transition-all bg-white hover:bg-blue-50/30" data-speed="quick">
                         Quick
                     </button>
                 </div>
             </div>
-
-            <div class="p-0">
+    
+            <div class="p-0 bg-white">
                 <div id="tableHargaBody" class="flex flex-col text-sm">
                     </div>
                 
-                <div id="hargaNote" class="px-5 py-3 text-[11px] text-textLight bg-gray-50 italic text-center border-t border-blue-50">
-                    *Harga dalam Rupiah. Khusus Kiloan Minimal 3 Kg.
+                <div id="hargaNote" class="px-5 py-4 text-[11px] text-textLight bg-gray-50 italic text-center border-t border-blue-50">
+                    <i class="fas fa-info-circle mr-1 opacity-70"></i> *Harga dalam Rupiah. Khusus Kiloan Minimal 3 Kg.
                 </div>
             </div>
         </div>
-        <div class="flex justify-center mt-10 reveal">
-            <a href="https://api.whatsapp.com/send/?phone=6285187270055&text=Halo+Briwash+Cihampelas%2C%0A%0ASaya+mau+tau+info+laundry%2C+saya+dapat+info+dari+Website+*%28LIST+PRIORITAS%29*&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp text-xl"></i> Pesan Sekarang
+        
+        <div class="flex justify-center mt-12 reveal">
+            <a href="https://api.whatsapp.com/send/?phone=6285187270055&text=Halo+Briwash+Cihampelas%2C%0A%0ASaya+mau+tau+info+laundry%2C+saya+dapat+info+dari+Website+*%28LIST+PRIORITAS%29*&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-secondary text-white font-semibold py-3.5 px-10 rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2 animate-pulse hover:animate-none">
+                <i class="fa-brands fa-whatsapp text-2xl"></i> Pesan Sekarang
             </a>
         </div>
     </section>

@@ -189,9 +189,9 @@ function renderPricelist() {
     
     // Logika Khusus: Tombol "Quick" hanya muncul jika kategori "kiloan"
     if (currentCategory === 'kiloan') {
-        btnQuick.style.display = 'inline-block';
+        if(btnQuick) btnQuick.style.display = 'inline-block';
     } else {
-        btnQuick.style.display = 'none';
+        if(btnQuick) btnQuick.style.display = 'none';
         // Jika sedang pilih quick tapi pindah kategori, kembalikan ke reguler
         if (currentSpeed === 'quick') {
             currentSpeed = 'reguler';
@@ -203,19 +203,21 @@ function renderPricelist() {
     let htmlContent = '';
 
     // Render Data dalam bentuk Flex/Grid List yang responsif
-    dataList.forEach(data => {
-        const harga = data[currentSpeed];
-        
-        // Desain Responsif: 
-        // Di HP: Teks di atas, harga di bawah. 
-        // Di Tablet/PC: Teks di kiri, harga di kanan (seperti tabel)
-        htmlContent += `
-            <div class="flex flex-col sm:flex-row justify-between sm:items-center p-4 border-b border-blue-50/50 hover:bg-blue-50/40 transition-colors gap-2">
-                <span class="font-medium text-textMain">${data.item}</span>
-                <span class="text-left sm:text-right">${formatRupiah(harga)}</span>
-            </div>
-        `;
-    });
+    if (dataList) {
+        dataList.forEach(data => {
+            const harga = data[currentSpeed];
+            
+            // Desain Responsif: 
+            // Di HP: Teks di atas, harga di bawah. 
+            // Di Tablet/PC: Teks di kiri, harga di kanan (seperti tabel)
+            htmlContent += `
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center p-4 border-b border-blue-50/50 hover:bg-blue-50/40 transition-colors gap-2">
+                    <span class="font-medium text-textMain">${data.item}</span>
+                    <span class="text-left sm:text-right">${formatRupiah(harga)}</span>
+                </div>
+            `;
+        });
+    }
 
     tableBody.innerHTML = htmlContent;
 }
@@ -224,11 +226,13 @@ function renderPricelist() {
 function updateCategoryUI() {
     tabKategoris.forEach(tab => {
         if (tab.dataset.kategori === currentCategory) {
-            tab.classList.remove('text-textLight', 'border-transparent');
-            tab.classList.add('text-primary', 'border-primary', 'bg-white', 'font-semibold');
+            // Desain Tab Aktif
+            tab.classList.remove('text-textLight', 'border-transparent', 'hover:bg-gray-50');
+            tab.classList.add('text-primary', 'border-primary', 'bg-blue-50/50', 'font-bold');
         } else {
-            tab.classList.add('text-textLight', 'border-transparent');
-            tab.classList.remove('text-primary', 'border-primary', 'bg-white', 'font-semibold');
+            // Desain Tab Tidak Aktif
+            tab.classList.add('text-textLight', 'border-transparent', 'hover:bg-gray-50');
+            tab.classList.remove('text-primary', 'border-primary', 'bg-blue-50/50', 'font-bold');
         }
     });
 }
@@ -237,11 +241,14 @@ function updateCategoryUI() {
 function updateSpeedUI() {
     btnSpeeds.forEach(btn => {
         if (btn.dataset.speed === currentSpeed) {
-            btn.classList.add('active-speed');
-            btn.classList.remove('text-textMain', 'border-blue-200');
+            // Desain Tombol Aktif (Warna Solid)
+            btn.classList.add('active-speed', 'bg-primary', 'text-white', 'font-semibold', 'shadow-md', 'transform', 'scale-105');
+            btn.classList.remove('border', 'border-blue-200', 'text-textLight', 'bg-white', 'text-textMain');
         } else {
-            btn.classList.remove('active-speed');
-            btn.classList.add('text-textMain', 'border-blue-200');
+            // Desain Tombol Tidak Aktif (Outline)
+            btn.classList.remove('active-speed', 'bg-primary', 'text-white', 'font-semibold', 'shadow-md', 'transform', 'scale-105');
+            btn.classList.add('border', 'border-blue-200', 'text-textLight', 'bg-white');
+            btn.classList.remove('text-textMain'); 
         }
     });
 }
