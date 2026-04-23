@@ -1,0 +1,49 @@
+/* Custom base settings */
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Animations (Reveal on Scroll) - DIPERCEPAT */
+.reveal {
+    opacity: 0;
+    transform: translateY(25px); /* Jarak dari bawah lebih pendek */
+    transition: all 0.5s ease-out; /* Dipercepat dari 0.8s menjadi 0.5s */
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Marquee Infinite Scroll Animation (Kiri & Kanan) - Diperlambat */
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 1.5rem)); }
+}
+
+@keyframes scroll-right {
+    0% { transform: translateX(calc(-50% - 1.5rem)); }
+    100% { transform: translateX(0); }
+}
+
+.scrolling-track-left {
+    animation: scroll-left 40s linear infinite; /* 40s = kecepatan lambat/santai */
+}
+.scrolling-track-left:hover {
+    animation-play-state: paused;
+}
+
+.scrolling-track-right {
+    animation: scroll-right 40s linear infinite;
+}
+.scrolling-track-right:hover {
+    animation-play-state: paused;
+}
+
+/* Styling Khusus Interaktif Pricelist */
+.active-speed {
+    background-color: #6582F6 !important;
+    color: white !important;
+    border-color: #6582F6 !important;
+    box-shadow: 0 4px 6px -1px rgba(101, 130, 246, 0.3);
+}

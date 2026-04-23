@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briwash Cihampelas - #1 Laundry Express Antar Jemput di Bandung</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6582F6',
+                        secondary: '#4868e0',
+                        textMain: '#3b4c68',
+                        textLight: '#6b7a90',
+                        bgLight: '#f0f5ff',
+                        success: '#28a745'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-textMain bg-[#fdfefe] font-sans overflow-x-hidden antialiased">
+
+    <nav id="navbar" class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center transition-all duration-300" id="navContainer">
+            <a href="#beranda" class="flex items-center transition-transform hover:scale-105">
+                <img src="Assets/Brand/briwash.png" alt="Logo Briwash" class="h-12 w-auto object-contain">
+            </a>
+
+            <ul class="hidden md:flex gap-8 items-center">
+                <li><a href="#beranda" class="font-medium text-textMain hover:text-primary transition-colors relative group">Beranda<span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="#tentang" class="font-medium text-textMain hover:text-primary transition-colors relative group">Tentang<span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="#layanan" class="font-medium text-textMain hover:text-primary transition-colors relative group">Layanan<span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="#harga" class="font-medium text-textMain hover:text-primary transition-colors relative group">Daftar Harga<span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="#testimoni" class="font-medium text-textMain hover:text-primary transition-colors relative group">Testimoni<span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="#kontak" class="font-medium text-textMain hover:text-primary transition-colors relative group">Kontak<span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span></a></li>
+            </ul>
+
+            <button id="menuBtn" class="md:hidden text-2xl text-primary focus:outline-none transition-transform duration-300">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="navMobile" class="md:hidden absolute top-full left-0 w-full bg-white shadow-lg flex flex-col items-center overflow-hidden max-h-0 opacity-0 invisible transition-all duration-500 ease-in-out">
+            <ul class="flex flex-col w-full text-center py-4">
+                <li><a href="#beranda" class="block py-3 font-medium text-textMain hover:text-primary mobile-link">Beranda</a></li>
+                <li><a href="#tentang" class="block py-3 font-medium text-textMain hover:text-primary mobile-link">Tentang</a></li>
+                <li><a href="#layanan" class="block py-3 font-medium text-textMain hover:text-primary mobile-link">Layanan</a></li>
+                <li><a href="#harga" class="block py-3 font-medium text-textMain hover:text-primary mobile-link">Daftar Harga</a></li>
+                <li><a href="#testimoni" class="block py-3 font-medium text-textMain hover:text-primary mobile-link">Testimoni</a></li>
+                <li><a href="#kontak" class="block py-3 font-medium text-textMain hover:text-primary mobile-link">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="beranda" class="relative bg-[image:linear-gradient(rgba(255,255,255,0.85),rgba(240,245,255,0.85)),url('Assets/Galeri/briwash-cihampelas.jpg')] bg-cover bg-center min-h-[85vh] flex flex-col justify-center items-center text-center px-6 pt-24 pb-16">
+        <div class="text-primary font-bold text-lg tracking-wide mb-6 reveal flex items-center justify-center gap-2 drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)]">
+            #1 Laundry Express Antar Jemput di Bandung
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-textMain mb-4 max-w-4xl leading-tight reveal">Nikmati Layanan <span class="text-primary inline-block">Briwash Cihampelas</span></h1>
+        <p class="text-sm md:text-lg text-textMain mb-10 max-w-2xl reveal">Cukup pesan via WhatsApp, tim kami jemput cucian Anda, proses express 3 jam selesai, bersih, rapih dan wangi tanpa repot!</p>
+        <a href="#kontak" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal flex items-center gap-2">
+            <i class="fab fa-whatsapp text-lg"></i> Pesan Sekarang
+        </a>
+    </header>
+
+    <section id="tentang" class="max-w-7xl mx-auto px-6 py-24">
+        <h2 class="text-2xl font-bold text-center text-textMain mb-2 reveal">Tentang Briwash Cihampelas</h2>
+        <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-12 reveal transition-all duration-300 hover:w-24"></div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="reveal">
+                <img src="Assets/Galeri/briwash-cihampelas-1.png" alt="Outlet Briwash Cihampelas" class="w-full aspect-[4/3] rounded-2xl shadow-xl object-cover">
+            </div>
+
+            <div class="reveal text-sm text-textMain space-y-4">
+                <p><strong>Briwash Cihampelas</strong> merupakan layanan laundry express premium yang berlokasi di jantung kota Bandung. Kami hadir dengan standar pelayanan tinggi, teknologi cuci modern, serta tim profesional yang berdedikasi untuk memberikan hasil terbaik.</p>
+                <p>Dengan pengalaman melayani ribuan pelanggan dari berbagai kalangan dan dipercaya oleh ratusan hotel di Bandung, kami membangun reputasi sebagai laundry pilihan utama para wisatawan dan warga lokal.</p>
+                <p class="text-lg text-primary font-semibold py-2">Profesional, Berkualitas, Terpercaya.</p>
+                <p>Di tengah ritme hidup yang semakin cepat, masyarakat urban dituntut untuk tetap produktif. Waktu yang tersita untuk mencuci dan menyetrika bisa dimanfaatkan untuk hal yang lebih bernilai. Di sinilah kami hadir sebagai solusi.</p>
+            </div>
+        </div>
+        
+        <div class="mt-16 reveal">
+            <h3 class="text-xl font-bold text-center text-textMain mb-10 font-outfit">Mengapa Memilih Kami?</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-sm">
+                <div class="group bg-white p-5 rounded-2xl border border-blue-50 shadow-sm hover:shadow-md hover:border-primary transition-all duration-300 flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <span class="font-medium text-textMain group-hover:text-primary transition-colors">Laundry Antar Jemput No. 1 (Google)</span>
+                </div>
+                <div class="group bg-white p-5 rounded-2xl border border-blue-50 shadow-sm hover:shadow-md hover:border-primary transition-all duration-300 flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <span class="font-medium text-textMain group-hover:text-primary transition-colors">Tenaga Kerja Profesional & Tersertifikasi</span>
+                </div>
+                <div class="group bg-white p-5 rounded-2xl border border-blue-50 shadow-sm hover:shadow-md hover:border-primary transition-all duration-300 flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <span class="font-medium text-textMain group-hover:text-primary transition-colors">Dipercaya Ribuan Wisatawan Bandung</span>
+                </div>
+                <div class="group bg-white p-5 rounded-2xl border border-blue-50 shadow-sm hover:shadow-md hover:border-primary transition-all duration-300 flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <span class="font-medium text-textMain group-hover:text-primary transition-colors">Antar Jemput Cepat (< 30 Menit)</span>
+                </div>
+                <div class="group bg-white p-5 rounded-2xl border border-blue-50 shadow-sm hover:shadow-md hover:border-primary transition-all duration-300 flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <span class="font-medium text-textMain group-hover:text-primary transition-colors">Super Express 3 Jam Selesai & Disetrika</span>
+                </div>
+                <div class="group bg-white p-5 rounded-2xl border border-blue-50 shadow-sm hover:shadow-md hover:border-primary transition-all duration-300 flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-shirt"></i>
+                    </div>
+                    <span class="font-medium text-textMain group-hover:text-primary transition-colors">Hasil Bersih, Rapih, dan Wangi Maksimal</span>
+                </div>
+                <div class="group bg-white p-5 rounded-2xl border border-blue-50 shadow-sm hover:shadow-md hover:border-primary transition-all duration-300 flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <span class="font-medium text-textMain group-hover:text-primary transition-colors">Hemat Rasa Premium, dari Rp 8.000/kg</span>
+                </div>
+                <div class="group bg-white p-5 rounded-2xl border border-blue-50 shadow-sm hover:shadow-md hover:border-primary transition-all duration-300 flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <span class="font-medium text-textMain group-hover:text-primary transition-colors">Dipercaya oleh banyak Public Figure</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-bgLight">
+        <section id="layanan" class="max-w-7xl mx-auto px-6 py-24">
+            <h2 class="text-2xl font-bold text-center text-textMain mb-2 reveal">Our Services</h2>
+            <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-4 reveal"></div>
+            <p class="text-sm text-center text-textMain mb-12 max-w-3xl mx-auto reveal">Pilihan layanan lengkap untuk segala jenis kebutuhan kebersihan pakaian dan barang kesayangan Anda.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-8">
+                <div class="bg-white p-6 md:p-8 rounded-2xl text-center shadow-sm border border-blue-50 hover:-translate-y-2 hover:border-primary hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 md:w-16 md:h-16 mx-auto bg-bgLight rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
+                        <i class="fas fa-weight-hanging text-2xl text-primary group-hover:text-white group-hover:rotate-6 transition-all duration-300"></i>
+                    </div>
+                    <h3 class="font-semibold text-textMain text-sm md:text-lg">Daily Kiloan</h3>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl text-center shadow-sm border border-blue-50 hover:-translate-y-2 hover:border-primary hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 md:w-16 md:h-16 mx-auto bg-bgLight rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
+                        <i class="fas fa-gem text-2xl text-primary group-hover:text-white group-hover:rotate-6 transition-all duration-300"></i>
+                    </div>
+                    <h3 class="font-semibold text-textMain text-sm md:text-lg">Premium Satuan</h3>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl text-center shadow-sm border border-blue-50 hover:-translate-y-2 hover:border-primary hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 md:w-16 md:h-16 mx-auto bg-bgLight rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
+                        <i class="fa-solid fa-bag-shopping text-2xl text-primary group-hover:text-white group-hover:rotate-6 transition-all duration-300"></i>
+                    </div>
+                    <h3 class="font-semibold text-textMain text-sm md:text-lg">Tas Premium</h3>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl text-center shadow-sm border border-blue-50 hover:-translate-y-2 hover:border-primary hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 md:w-16 md:h-16 mx-auto bg-bgLight rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
+                        <i class="fa-solid fa-shoe-prints text-2xl text-primary group-hover:text-white group-hover:rotate-6 transition-all duration-300"></i>
+                    </div>
+                    <h3 class="font-semibold text-textMain text-sm md:text-lg">Sepatu</h3>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl text-center shadow-sm border border-blue-50 hover:-translate-y-2 hover:border-primary hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 md:w-16 md:h-16 mx-auto bg-bgLight rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
+                        <i class="fas fa-scroll text-2xl text-primary group-hover:text-white group-hover:rotate-6 transition-all duration-300"></i>
+                    </div>
+                    <h3 class="font-semibold text-textMain text-sm md:text-lg">Karpet</h3>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl text-center shadow-sm border border-blue-50 hover:-translate-y-2 hover:border-primary hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 md:w-16 md:h-16 mx-auto bg-bgLight rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
+                        <i class="fas fa-paw text-2xl text-primary group-hover:text-white group-hover:rotate-6 transition-all duration-300"></i>
+                    </div>
+                    <h3 class="font-semibold text-textMain text-sm md:text-lg">Boneka</h3>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl text-center shadow-sm border border-blue-50 hover:-translate-y-2 hover:border-primary hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 md:w-16 md:h-16 mx-auto bg-bgLight rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
+                        <i class="fas fa-person-booth text-2xl text-primary group-hover:text-white group-hover:rotate-6 transition-all duration-300"></i>
+                    </div>
+                    <h3 class="font-semibold text-textMain text-sm md:text-lg">Gordyn</h3>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl text-center shadow-sm border border-blue-50 hover:-translate-y-2 hover:border-primary hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 md:w-16 md:h-16 mx-auto bg-bgLight rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
+                        <i class="fas fa-baby-carriage text-2xl text-primary group-hover:text-white group-hover:rotate-6 transition-all duration-300"></i>
+                    </div>
+                    <h3 class="font-semibold text-textMain text-sm md:text-lg">Baby Stroller</h3>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl text-center shadow-sm border border-blue-50 hover:-translate-y-2 hover:border-primary hover:shadow-xl transition-all duration-300 group reveal sm:col-span-1 col-span-2">
+                    <div class="w-14 h-14 md:w-16 md:h-16 mx-auto bg-bgLight rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
+                        <i class="fas fa-helmet-safety text-2xl text-primary group-hover:text-white group-hover:rotate-6 transition-all duration-300"></i>
+                    </div>
+                    <h3 class="font-semibold text-textMain text-sm md:text-lg">Helm</h3>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <section id="harga" class="max-w-7xl mx-auto px-6 py-24 bg-white">
+        <div class="reveal">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-textMain mb-2 font-outfit">Daftar Harga Layanan</h2>
+            <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-6"></div>
+            <p class="text-center text-sm text-textLight max-w-3xl mx-auto mb-10">Pilih kategori dan estimasi waktu pengerjaan untuk melihat detail harga.</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto bg-white border border-blue-100 rounded-2xl shadow-sm overflow-hidden reveal">
+            
+            <div class="flex overflow-x-auto border-b border-blue-100 hide-scrollbar bg-gray-50/50">
+                <button class="tab-kategori flex-1 min-w-[120px] py-4 px-2 text-center text-sm font-semibold text-primary border-b-2 border-primary bg-white transition-colors" data-kategori="kiloan">
+                    Daily Kiloan
+                </button>
+                <button class="tab-kategori flex-1 min-w-[120px] py-4 px-2 text-center text-sm font-medium text-textLight border-b-2 border-transparent hover:text-primary transition-colors" data-kategori="satuan">
+                    Premium Satuan
+                </button>
+                <button class="tab-kategori flex-1 min-w-[120px] py-4 px-2 text-center text-sm font-medium text-textLight border-b-2 border-transparent hover:text-primary transition-colors" data-kategori="sepatutas">
+                    Shoes & Bags
+                </button>
+                <button class="tab-kategori flex-1 min-w-[120px] py-4 px-2 text-center text-sm font-medium text-textLight border-b-2 border-transparent hover:text-primary transition-colors" data-kategori="rumah">
+                    Households
+                </button>
+            </div>
+
+            <div class="p-5 bg-white border-b border-blue-50 flex flex-col items-center">
+                <p class="text-xs text-textMain mb-3 font-medium">Pilih Kecepatan Pengerjaan:</p>
+                <div class="flex flex-wrap justify-center gap-2">
+                    <button class="btn-speed active-speed px-4 py-1.5 rounded-full border border-blue-200 text-textMain hover:border-primary hover:text-primary text-xs font-medium transition-all shadow-sm" data-speed="reguler">
+                        Reguler
+                    </button>
+                    <button class="btn-speed px-4 py-1.5 rounded-full border border-blue-200 text-textMain hover:border-primary hover:text-primary text-xs font-medium transition-all" data-speed="oneday">
+                        One Day (24 jam)
+                    </button>
+                    <button class="btn-speed px-4 py-1.5 rounded-full border border-blue-200 text-textMain hover:border-primary hover:text-primary text-xs font-medium transition-all" data-speed="express">
+                        Express (6 jam)
+                    </button>
+                    <button id="btnQuick" class="btn-speed px-4 py-1.5 rounded-full border border-blue-200 text-textMain hover:border-primary hover:text-primary text-xs font-medium transition-all" data-speed="quick">
+                        Quick
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-0">
+                <div id="tableHargaBody" class="flex flex-col text-sm">
+                    </div>
+                
+                <div id="hargaNote" class="px-5 py-3 text-[11px] text-textLight bg-gray-50 italic text-center border-t border-blue-50">
+                    *Harga dalam Rupiah. Khusus Kiloan Minimal 3 Kg.
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center mt-10 reveal">
+            <a href="https://wa.me/6285187270055" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2">
+                <i class="fab fa-whatsapp text-xl"></i> Pesan Sekarang
+            </a>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-24">
+        <h2 class="text-2xl font-bold text-center text-textMain mb-2 reveal">Laundry Express 3 Jam Selesai</h2>
+        <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-4 reveal"></div>
+        <p class="text-sm text-center text-textMain mb-12 max-w-3xl mx-auto reveal">Di Briwash Cihampelas, kami memahami bahwa waktu Anda sangat berharga. Cucian mendesak untuk acara mendadak atau meeting penting tak perlu lagi jadi sumber stres.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="reveal w-full flex justify-center lg:justify-end">
+                <img src="/Assets/Galeri/briwash-cihampelas-2.png" alt="Pelayanan Express Briwash" class="w-full aspect-[3/4] rounded-2xl shadow-xl object-cover">
+            </div>
+
+            <div class="flex flex-col gap-6">
+                <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-6 bg-white rounded-2xl border border-blue-50 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div class="w-16 h-16 shrink-0 bg-bgLight rounded-full flex items-center justify-center text-primary text-2xl"><i class="fas fa-truck-fast"></i></div>
+                    <div>
+                        <h3 class="text-lg font-bold text-textMain mb-2">1. Pickup Express</h3>
+                        <p class="text-sm text-textMain">Setelah Anda mengirimkan permintaan via WhatsApp, tim kami berangkat menjemput cucian dalam waktu kurang dari 30 menit.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-6 bg-white rounded-2xl border border-blue-50 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div class="w-16 h-16 shrink-0 bg-bgLight rounded-full flex items-center justify-center text-primary text-2xl"><i class="fas fa-hands-wash"></i></div>
+                    <div>
+                        <h3 class="text-lg font-bold text-textMain mb-2">2. Proses Premium</h3>
+                        <p class="text-sm text-textMain">Cucian diproses menggunakan mesin dan deterjen pilihan, dengan pengering otomatis yang menjaga kesegaran pakaian.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-6 bg-white rounded-2xl border border-blue-50 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div class="w-16 h-16 shrink-0 bg-bgLight rounded-full flex items-center justify-center text-primary text-2xl"><i class="fas fa-people-carry-box"></i></div>
+                    <div>
+                        <h3 class="text-lg font-bold text-textMain mb-2">3. Delivery Tepat Waktu</h3>
+                        <p class="text-sm text-textMain">Dalam 3 jam sejak pickup, laundry akan tiba di depan pintu Anda, siap pakai dan wangi maksimal.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <div class="bg-bgLight">
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            <h2 class="text-2xl font-bold text-center text-textMain mb-2 reveal">Sekali Coba, Jamin Gak Akan Ke Lain Hati</h2>
+            <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-4 reveal"></div>
+            <p class="text-sm text-center text-textMain mb-12 max-w-3xl mx-auto reveal">Dengan mempercayakan urusan laundry kepada kami, Anda berinvestasi dalam kualitas hidup yang lebih baik. Nikmati me-time Anda tanpa beban cucian!</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="bg-white p-6 rounded-2xl border border-blue-50 shadow-sm reveal">
+                    <div class="flex gap-4 mb-6">
+                        <i class="fas fa-heart text-primary text-xl mt-1"></i>
+                        <div>
+                            <strong class="text-lg text-textMain">Antar Jemput No. 1 di Bandung</strong>
+                            <p class="text-textMain text-sm mt-1">Tidak perlu repot angkut dan antri untuk drop cucian.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <i class="fas fa-heart text-primary text-xl mt-1"></i>
+                        <div>
+                            <strong class="text-lg text-textMain">Express 3 Jam Selesai</strong>
+                            <p class="text-textMain text-sm mt-1">Hasil tetap maksimal bersih, rapih dan wangi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-blue-50 shadow-sm reveal">
+                    <div class="flex gap-4 mb-6">
+                        <i class="fas fa-heart text-primary text-xl mt-1"></i>
+                        <div>
+                            <strong class="text-lg text-textMain">Andalan Warga Bandung</strong>
+                            <p class="text-textMain text-sm mt-1">Telah dipercaya oleh ribuan warga dan keluarga di Bandung.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <i class="fas fa-heart text-primary text-xl mt-1"></i>
+                        <div>
+                            <strong class="text-lg text-textMain">Andalan Wisatawan</strong>
+                            <p class="text-textMain text-sm mt-1">Dipercaya ratusan hotel ternama, memudahkan banyak wisatawan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <section class="max-w-7xl mx-auto px-6 py-20 bg-white">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-2xl md:text-3xl font-bold text-textMain mb-4 font-outfit">Dipercaya Pelanggan Hotel Ternama di Kota Bandung</h2>
+            <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-8"></div>
+            
+            <div class="text-textMain leading-relaxed space-y-4 text-sm md:text-base">
+                <p>Reputasi <strong>Briwash Cihampelas</strong> tidak hanya dibangun dari layanan untuk perorangan. Kami juga telah menjadi partner terpercaya bagi lebih dari 100 hotel ternama di Bandung, termasuk <em>Aston Tropicana, Sensa Hotel, Grand Tjokro, Moxy Bandung</em>, dan banyak lainnya.</p>
+                
+                <p>Kepercayaan ini membuktikan bahwa standar kebersihan dan profesionalisme kami telah diakui oleh pelaku industri <em>hospitality</em> — sebuah validasi yang tidak bisa diabaikan.</p>
+                
+                <p>Dengan sistem order yang sangat mudah, Anda tidak perlu repot mengangkut cucian ke outlet dan antri. Tinggal pesan layanan kami melalui WhatsApp atau temukan kami di Google Maps dengan mengetik <strong>"Briwash Cihampelas"</strong>. Admin akan mengirim <em>driver</em> ke lokasi untuk menjemput cucian Anda. Gunakan layanan Express 3 Jam Selesai untuk proses cucian yang kilat!</p>
+            </div>
+        </div>
+        
+        <div class="flex justify-center mt-10 reveal">
+            <a href="https://wa.me/6285187270055" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2">
+                <i class="fab fa-whatsapp text-xl"></i> Pesan Sekarang
+            </a>
+        </div>
+        
+        <div class="mt-16 reveal">
+            <h3 class="text-center text-xs md:text-sm font-bold tracking-widest text-textLight uppercase mb-8">
+                Dipercaya Pelanggan Dari 100+ Hotel Ternama
+            </h3>
+            
+            <div class="relative w-full overflow-hidden py-4 before:content-[''] before:absolute before:left-0 before:top-0 before:w-20 before:h-full before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:content-[''] after:absolute after:right-0 after:top-0 after:w-20 after:h-full after:bg-gradient-to-l after:from-white after:to-transparent after:z-10">
+                
+                <div id="hotelContainer" class="flex gap-10 md:gap-16 w-max scrolling-track-left" style="animation-duration: 35s;">
+                    </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-20 pb-10">
+        <h2 class="text-2xl font-bold text-center text-textMain mb-2 reveal">Standar Pelayanan Kami</h2>
+        <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-4 reveal"></div>
+        <p class="text-sm text-center text-textMain mb-12 max-w-3xl mx-auto reveal">Dari penyambutan hangat di outlet hingga hasil cucian premium yang dikemas rapi dan higienis untuk Anda.</p>
+        
+        <div id="galleryContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            </div>
+    </section>
+
+    <section id="testimoni" class="max-w-7xl mx-auto px-6 pt-10 pb-20 scroll-mt-24">
+        <h2 class="text-2xl font-bold text-center text-textMain mb-2 reveal">Apa Kata Mereka?</h2>
+        <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-4 reveal"></div>
+        <p class="text-sm text-center text-textMain mb-12 max-w-3xl mx-auto reveal">Ulasan dari pelanggan setia Briwash Cihampelas di Bandung.</p>
+
+        <div id="testiGrid" class="flex gap-6 overflow-x-auto hide-scrollbar pb-4 reveal" style="scroll-snap-type: x mandatory;">
+            <div class="bg-white p-8 rounded-2xl border border-blue-50 shadow-sm relative shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" style="scroll-snap-align: start;">
+                <i class="fas fa-quote-left absolute top-6 right-6 text-4xl text-textMain"></i>
+                <div class="text-[#ffc107] mb-4 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="italic text-textMain mb-6 text-sm sm:text-base leading-relaxed break-words">"Sangat terbantu pas lagi liburan di Bandung. Pakaian kotor numpuk langsung beres dalam 3 jam. Wanginya juga premium banget!"</p>
+                <p class="font-bold text-primary">- Rina S., Wisatawan</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-blue-50 shadow-sm relative shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" style="scroll-snap-align: start;">
+                <i class="fas fa-quote-left absolute top-6 right-6 text-4xl text-textMain"></i>
+                <div class="text-[#ffc107] mb-4 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="italic text-textMain mb-6 text-sm sm:text-base leading-relaxed break-words">"Langganan tetap buat cuci bedcover dan jas kerja. Kurirnya ramah dan selalu on time kalau dihubungin via WA."</p>
+                <p class="font-bold text-primary">- Kang Dimas, Pekerja Kantoran</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-blue-50 shadow-sm relative shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" style="scroll-snap-align: start;">
+                <i class="fas fa-quote-left absolute top-6 right-6 text-4xl text-textMain"></i>
+                <div class="text-[#ffc107] mb-4 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                <p class="italic text-textMain mb-6 text-sm sm:text-base leading-relaxed break-words">"Nyoba cuci stroller bayi disini dan hasilnya luar biasa bersih. Nggak nyangka pelayanannya secepat ini dengan harga yang sangat masuk akal."</p>
+                <p class="font-bold text-primary">- Ibu Sarah, Ibu Rumah Tangga</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-blue-50 shadow-sm relative shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" style="scroll-snap-align: start;">
+                <i class="fas fa-quote-left absolute top-6 right-6 text-4xl text-textMain"></i>
+                <div class="text-[#ffc107] mb-4 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="italic text-textMain mb-6 text-sm sm:text-base leading-relaxed break-words">"Kualitas cuciannya emang beda, bajuku yang sensitif dicuci satuan dan warnanya tetep awet. Recommended banget!"</p>
+                <p class="font-bold text-primary">- Fajar A., Mahasiswa</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-blue-50 shadow-sm relative shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" style="scroll-snap-align: start;">
+                <i class="fas fa-quote-left absolute top-6 right-6 text-4xl text-textMain"></i>
+                <div class="text-[#ffc107] mb-4 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="italic text-textMain mb-6 text-sm sm:text-base leading-relaxed break-words">"Cuci sepatu disini bener-bener kayak beli baru lagi. Noda kuning di sepatu putihku hilang tak bersisa. Bakal langganan terus!"</p>
+                <p class="font-bold text-primary">- Taufik H., Kolektor Sepatu</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-white overflow-hidden">
+        <section class="max-w-7xl mx-auto py-16 text-center">
+            
+            <div class="reveal">
+                <h3 class="text-xl font-bold text-textMain mb-6">Metode Pembayaran Mudah</h3>
+                <div class="relative w-full py-4 before:content-[''] before:absolute before:left-0 before:top-0 before:w-20 before:h-full before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:content-[''] after:absolute after:right-0 after:top-0 after:w-20 after:h-full after:bg-gradient-to-l after:from-white after:to-transparent after:z-10 flex flex-col gap-6">
+                    
+                    <div id="paymentContainer1" class="flex gap-12 w-max scrolling-track-left">
+                        </div>
+                    <div id="paymentContainer2" class="flex gap-12 w-max scrolling-track-right">
+                        </div>
+
+                </div>
+            </div>
+
+            <div class="reveal mt-12">
+                <h3 class="text-xl font-bold text-textMain mb-6">Thanks To</h3>
+                <div class="relative w-full py-4 before:content-[''] before:absolute before:left-0 before:top-0 before:w-20 before:h-full before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:content-[''] after:absolute after:right-0 after:top-0 after:w-20 after:h-full after:bg-gradient-to-l after:from-white after:to-transparent after:z-10 flex flex-col gap-6">
+                    <div id="thanksContainer1" class="flex gap-12 w-max scrolling-track-left">
+                        </div>
+                    <div id="thanksContainer2" class="flex gap-12 w-max scrolling-track-right">
+                        </div>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+
+    <footer id="kontak" class="bg-bgLight pt-20 pb-8 border-t border-blue-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 lg:gap-12 mb-16">
+                
+                <div class="md:col-span-12 lg:col-span-4 reveal">
+                    <a href="#beranda" class="inline-block mb-6 text-2xl md:text-3xl font-bold text-primary font-outfit tracking-tight hover:text-secondary transition-colors">
+                        Briwash Cihampelas
+                    </a>
+                    <p class="text-textMain mb-8 leading-relaxed pr-0 lg:pr-6 text-sm md:text-base">
+                        Layanan laundry express premium no. 1 di Bandung. Karena hidup bukan hanya tentang bekerja — tapi juga menikmati setiap momen tanpa beban cucian.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://instagram.com/briwash_cihampelas" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center shadow-sm border border-blue-50 hover:bg-primary hover:text-white hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://www.facebook.com/laundryklincihampelas" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center shadow-sm border border-blue-50 hover:bg-primary hover:text-white hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a href="https://youtube.com/@laundryklincihampelas1110" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center shadow-sm border border-blue-50 hover:bg-primary hover:text-white hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                            <i class="fab fa-youtube text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-6 lg:col-span-4 reveal">
+                    <h3 class="text-xl font-bold text-primary mb-6 font-outfit relative inline-block">
+                        Hubungi Kami
+                        <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-5 text-textMain mt-4">
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 shrink-0 bg-white rounded-full flex items-center justify-center text-primary shadow-sm border border-blue-50">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-textMain mb-0.5">Buka Setiap Hari</strong>
+                                <span class="text-sm">07.00 - 20.00 WIB</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 shrink-0 bg-white rounded-full flex items-center justify-center text-primary shadow-sm border border-blue-50">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-textMain mb-0.5">Lokasi Outlet</strong>
+                                <span class="text-sm leading-relaxed block">Jl. Cihampelas No.193 A, Cipaganti, Kec. Coblong, Kota Bandung 40131</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 shrink-0 bg-white rounded-full flex items-center justify-center text-primary shadow-sm border border-blue-50">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <strong class="block text-textMain mb-0.5 text-sm md:text-base">Layanan WhatsApp</strong>
+                                <a href="https://wa.me/6285187270055" target="_blank" rel="noopener noreferrer" class="text-sm hover:text-primary transition-colors flex items-center gap-1">
+                                    Admin 1: <span class="font-semibold underline decoration-blue-200 underline-offset-2">0851-8727-0055</span>
+                                </a>
+                                <a href="https://wa.me/628112959218" target="_blank" rel="noopener noreferrer" class="text-sm hover:text-primary transition-colors flex items-center gap-1">
+                                    Admin 2: <span class="font-semibold underline decoration-blue-200 underline-offset-2">0811-2959-218</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        
+                <div class="md:col-span-6 lg:col-span-4 reveal flex flex-col h-full">
+                    <h3 class="text-xl font-bold text-primary mb-6 font-outfit relative inline-block">
+                        Peta Lokasi
+                        <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary rounded-full"></span>
+                    </h3>
+                    <div class="w-full grow min-h-[250px] mt-4 rounded-2xl overflow-hidden shadow-sm border border-blue-100 hover:shadow-md transition-shadow duration-300">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7922.044132490753!2d107.6038001!3d-6.8879601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e658b2b15ee7%3A0x4ca05f2b17b1f5e2!2sJl.%20Cihampelas%20No.193a%2C%20Cipaganti%2C%20Kecamatan%20Coblong%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040131%2C%20Indonesia!5e0!3m2!1sid!2sus!4v1776904330609!5m2!1sid!2sus" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="w-full h-full">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-100/60 pt-8 pb-4 text-center reveal flex flex-col items-center gap-4">
+                <a href="#" id="btnOpenSnK" class="inline-block bg-primary text-white font-bold px-8 py-3 rounded-full shadow-lg shadow-primary/30 hover:bg-secondary hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-300">
+                    <i class="fas fa-file-contract mr-2"></i>Syarat & Ketentuan Layanan
+                </a>
+                
+                <p class="text-textMain text-sm mt-2 opacity-80">
+                    © 2026 Briwash Cihampelas Bandung. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modalSnK" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 opacity-0 invisible transition-all duration-300 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col transform scale-95 transition-transform duration-300" id="modalContent">
+            
+            <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-blue-50">
+                <h3 class="text-xl font-bold text-primary font-outfit"><i class="fas fa-file-contract mr-2"></i>Syarat & Ketentuan</h3>
+                <button id="closeSnK" class="text-gray-400 hover:text-red-500 transition-colors text-2xl focus:outline-none">&times;</button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto text-sm md:text-base text-textMain space-y-6" style="scrollbar-width: thin;">
+                
+                <div>
+                    <ol class="list-decimal list-outside ml-5 space-y-3">
+                        <li>Pelayanan dan transaksi dilakukan berdasarkan sistem antrian dan cucian akan diproses apabila sudah dilakukan pembayaran full payment.</li>
+                        <li>Minimal cuci adalah 3kg, karena di laundry kami cucian pelanggan TIDAK DICAMPUR alias 1 MESIN CUCI 1 CUSTOMER. Berat cucian akan dilakukan pembulatan kebawah jika kurang dari 0.4kg, dan akan dilakukan pembulatan ke atas jika diatas 0.5kg.</li>
+                        <li>Laundry akan dipickup oleh Mitra Kami (Lalamove/Paqetku), jadi tidak menyediakan wadah untuk cucian kotor, mohon dipastikan laundry dibungkus rapi sebelum diberikan kepada driver.</li>
+                        <li>Untuk Pemesanan Layanan Express diatas pukul 13.00, akan selesai pada esok hari.</li>
+                        <li>Kerusakan pakaian akibat kondisi awal barang (sobek, lubang, kualitas bahan buruk) bukan tanggung jawab kami.</li>
+                        <li>Jika terjadi masalah sehubungan dengan jumlah pakaian yang dalam tanggung jawab kami, maka perhitungan seperti tercantum pada bukti penyerahan kami adalah yang benar.</li>
+                        <li>Barang yang tidak di ambil setelah 1 minggu, diluar tanggung jawab kami.</li>
+                        <li>Biaya ganti rugi diberikan sebesar Rp 20 ribu/pcs maksimal Rp 100 ribu untuk Laundry Kiloan dan 5x Nilai Cuci pada item yang tercetak pada nota penjualan Laundry Satuan.</li>
+                        <li>Hak klaim komplain berlaku 24 jam setelah cucian diambil atau seminggu dari cucian masuk dengan melampirkan video unboxing dan struk/e-faktur.</li>
+                        <li>Kami akan memberikan uang Sebesar Rp 100.000 Jika Crew kami tidak memberikan Struk Official.</li>
+                        <li>Kami TIDAK MENERIMA item yang terdapat kotoran, darah dan bulu hewan yang dapat mengurangi higienitas pakaian. Mencuci di laundry kami, berarti menyetujui syarat dan ketentuan yang berlaku.</li>
+                        <li>Perubahan seperti kerusakan, kelunturan, atau penyusutan yang terjadi akibat sifat alami serat bahan dapat terjadi dan berada di luar kendali kami.</li>
+                    </ol>
+                </div>
+
+                <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                    <h4 class="font-bold text-primary mb-3"><i class="fas fa-exclamation-circle mr-2"></i>Pakaian Satuan (Tidak Bisa Masuk Laundry Kiloan)</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 list-disc list-inside mb-3 text-textMain text-sm">
+                        <li>Sweater & Jaket</li>
+                        <li>Pakaian Batik & Gamis</li>
+                        <li>Pakaian Berbahan Sutra & Sifon</li>
+                        <li>Handuk/Piyama Mandi</li>
+                        <li>Sajadah & Mukena</li>
+                        <li>Kebaya</li>
+                        <li>Pakaian warna Putih & Merah</li>
+                        <li>Jas, Blazer, & Dasi Blouse</li>
+                        <li>Bed Cover / Linen</li>
+                        <li>Curtains / Gordain</li>
+                        <li>Barang lainnya yang dianggap berharga</li>
+                    </ul>
+                    <p class="text-xs text-red-500 italic mt-3 bg-red-50 p-2 rounded border border-red-100">*Apabila Customer tetap mau mencuci kiloan maka customer yang bertanggung jawab jika terjadi kerusakan dll.</p>
+                </div>
+            </div>
+            
+            <div class="px-6 py-4 border-t border-gray-100 bg-gray-50 flex justify-end">
+                <button id="btnMengerti" class="bg-primary hover:bg-secondary text-white px-6 py-2 rounded-full font-medium transition-colors shadow-sm">Saya Mengerti</button>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="JS/script.js"></script>
+</body>
+</html>
