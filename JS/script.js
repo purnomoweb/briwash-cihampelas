@@ -360,14 +360,21 @@ if (testiGrid) {
 }
 
 // 7. Modal Syarat & Ketentuan (Pop-Up)
-const btnOpenSnK = document.getElementById('btnOpenSnK');
 const modalSnK = document.getElementById('modalSnK');
 const modalContent = document.getElementById('modalContent');
 const closeSnK = document.getElementById('closeSnK');
 const btnMengerti = document.getElementById('btnMengerti');
 
+// Tombol pemicu (Ada 3: Footer, Navigasi PC, dan Navigasi HP)
+const snkTriggers = [
+    document.getElementById('btnOpenSnK'),      // Di Footer
+    document.getElementById('navDeskOpenSnK'),  // Di Navigasi Desktop
+    document.getElementById('navMobOpenSnK')    // Di Navigasi Mobile
+];
+
 // Fungsi untuk membuka pop-up
 function openModal() {
+    if (!modalSnK) return;
     modalSnK.classList.remove('invisible', 'opacity-0');
     modalContent.classList.remove('scale-95');
     modalContent.classList.add('scale-100');
@@ -375,27 +382,36 @@ function openModal() {
 
 // Fungsi untuk menutup pop-up
 function closeModal() {
+    if (!modalSnK) return;
     modalSnK.classList.add('opacity-0');
     modalContent.classList.remove('scale-100');
     modalContent.classList.add('scale-95');
-    // Tunggu animasi transisi selesai (300ms) baru sembunyikan total
     setTimeout(() => {
         modalSnK.classList.add('invisible');
     }, 300);
 }
 
-// Event Listener (Pemicu)
-if (btnOpenSnK) {
-    btnOpenSnK.addEventListener('click', (e) => {
-        e.preventDefault(); // Mencegah layar lompat ke atas saat link di-klik
-        openModal();
-    });
-}
+// Event Listener untuk semua pemicu (Looping)
+snkTriggers.forEach(trigger => {
+    if (trigger) {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+            
+            // Opsional: Jika di klik dari menu HP, tutup menu HP-nya terlebih dahulu
+            // Ganti 'navMenu' dengan ID menu mobile Anda jika ingin otomatis menutup
+            const navMenu = document.getElementById('navMenu'); 
+            if (navMenu && !navMenu.classList.contains('hidden')) {
+                navMenu.classList.add('hidden');
+            }
+        });
+    }
+});
 
 if (closeSnK) closeSnK.addEventListener('click', closeModal);
 if (btnMengerti) btnMengerti.addEventListener('click', closeModal);
 
-// Fitur tambahan: Tutup pop-up jika pengunjung klik area gelap di luar kotak putih
+// Tutup pop-up jika pengunjung klik area gelap
 window.addEventListener('click', (e) => {
     if (e.target === modalSnK) {
         closeModal();
