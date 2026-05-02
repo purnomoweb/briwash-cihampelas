@@ -445,3 +445,147 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }, 1500);
     });
 });
+
+// --- FITUR CUSTOM DROPDOWN ---
+document.querySelectorAll('.custom-select-wrapper').forEach(wrapper => {
+    const trigger = wrapper.querySelector('.custom-select-trigger');
+    const options = wrapper.querySelector('.custom-select-options');
+    const textDisplay = wrapper.querySelector('.selected-text');
+    const hiddenInput = wrapper.querySelector('input[type="hidden"]');
+    const icon = wrapper.querySelector('i');
+    const errorMsg = wrapper.querySelector('.error-msg'); // Mengambil teks error jika ada
+
+    // Buka tutup dropdown saat diklik
+    trigger.addEventListener('click', (e) => {
+        document.querySelectorAll('.custom-select-options').forEach(opt => {
+            if (opt !== options) opt.classList.add('hidden');
+        });
+        document.querySelectorAll('.custom-select-trigger i').forEach(ic => {
+            if (ic !== icon) ic.classList.remove('rotate-180');
+        });
+        
+        options.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180');
+        e.stopPropagation();
+    });
+
+    // Pilih opsi
+    options.querySelectorAll('li').forEach(li => {
+        li.addEventListener('click', () => {
+            textDisplay.textContent = li.textContent;
+            hiddenInput.value = li.getAttribute('data-value');
+            
+            // Ubah teks jadi hitam pekat jika sudah memilih
+            textDisplay.classList.remove('text-gray-400');
+            textDisplay.classList.add('text-textMain');
+
+            // HILANGKAN TANDA ERROR MERAH SAAT OPSI DIPILIH
+            trigger.classList.remove('border-red-500', 'bg-red-50');
+            trigger.classList.add('border-gray-200');
+            if (errorMsg) errorMsg.classList.add('hidden');
+
+            options.classList.add('hidden');
+            icon.classList.remove('rotate-180');
+        });
+    });
+});
+
+// Tutup dropdown jika klik sembarang tempat
+document.addEventListener('click', () => {
+    document.querySelectorAll('.custom-select-options').forEach(opt => opt.classList.add('hidden'));
+    document.querySelectorAll('.custom-select-trigger i').forEach(ic => ic.classList.remove('rotate-180'));
+});
+
+// --- FITUR KIRIM FORM PICKUP KE WHATSAPP ---
+const formPickup = document.getElementById('formPickupLaundry');
+
+// Fungsi pembantu untuk memunculkan/menyembunyikan desain error merah
+function setErrorStatus(inputId, isError) {
+    const inputEl = document.getElementById(inputId);
+    const wrapper = inputEl.closest('.custom-select-wrapper');
+    const trigger = wrapper.querySelector('.custom-select-trigger');
+    const errorMsg = wrapper.querySelector('.error-msg');
+    
+    if (isError) {
+        trigger.classList.add('border-red-500', 'bg-red-50');
+        trigger.classList.remove('border-gray-200');
+        if (errorMsg) errorMsg.classList.remove('hidden');
+    } else {
+        trigger.classList.remove('border-red-500', 'bg-red-50');
+        trigger.classList.add('border-gray-200');
+        if (errorMsg) errorMsg.classList.add('hidden');
+    }
+}
+
+if (formPickup) {
+    formPickup.addEventListener('submit', function(e) {
+        e.preventDefault(); 
+
+        const satuanInput = document.getElementById('waSatuan').value.trim();
+        const paket = document.getElementById('waPaket').value;
+        const layanan = document.getElementById('waLayanan').value;
+        const proses = document.getElementById('waProses').value;
+        const berharga = document.getElementById('waBerharga').value;
+        const tas = document.getElementById('waTas').value;
+        const luntur = document.getElementById('waLuntur').value;
+
+        let isFormValid = true;
+
+        // 1. Validasi Cerdas Paket Kiloan
+        if (paket === '-' && satuanInput === '') {
+            setErrorStatus('waPaket', true);
+            isFormValid = false;
+        } else {
+            setErrorStatus('waPaket', false);
+        }
+        
+        // 2. Validasi Dropdown Lainnya
+        const fieldsToValidate = ['waLayanan', 'waProses', 'waBerharga', 'waTas', 'waLuntur'];
+        fieldsToValidate.forEach(fieldId => {
+            if (document.getElementById(fieldId).value === '-') {
+                setErrorStatus(fieldId, true);
+                isFormValid = false;
+            } else {
+                setErrorStatus(fieldId, false);
+            }
+        });
+
+        // Jika ada yang belum diisi, gulir layar kembali ke form agar pelanggan melihat kotak merahnya
+        if (!isFormValid) {
+            document.getElementById('formPickupLaundry').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return; // Hentikan pengiriman
+        }
+
+        // Jika semua validasi sukses, ambil sisa data dan kirim
+        const nama = document.getElementById('waNama').value;
+        const alamat = document.getElementById('waAlamat').value;
+        const noWA = document.getElementById('waNo').value;
+        const waktu = document.getElementById('waWaktu').value;
+        const jumlah = document.getElementById('waJumlah').value;
+        const catatan = document.getElementById('waCatatan').value || '-';
+
+        const nomorTujuan = "6281120081011"; 
+
+        const pesanWA = `*FORM PICKUP LAUNDRY BRIWASH*%0A%0A
+*IDENTITAS*%0A
+- Nama Lengkap : ${nama}%0A
+- Alamat Pickup : ${alamat}%0A
+- No. WhatsApp : ${noWA}%0A
+- Waktu Pickup : ${waktu}%0A%0A
+*DETAIL CUCIAN*%0A
+- Paket Kiloan : ${paket}%0A
+- Cuci Satuan : ${satuanInput || '-'}%0A
+- Jumlah : ${jumlah}%0A
+- Proses Cuci : ${proses}%0A
+- Ada Barang Berharga : ${berharga}%0A
+- Tas Cucian : ${tas}%0A
+- Ada yang Luntur : ${luntur}%0A
+- Layanan : ${layanan}%0A
+- Catatan : ${catatan}%0A%0A
+*PERINGATAN*:
+Dengan order artinya menyetujui *Syarat dan Ketentuan* yang berlaku. Pembayaran hanya via QRIS/CASH di Outlet. Estimasi waktu dimulai setelah pembayaran lunas. Kami tidak bertanggung jawab atas transfer di luar sistem resmi. Komplain wajib Video Unboxing.`;
+
+        const urlWA = `https://api.whatsapp.com/send?phone=${nomorTujuan}&text=${pesanWA}`;
+        window.open(urlWA, '_blank');
+    });
+}

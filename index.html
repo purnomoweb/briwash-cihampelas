@@ -87,7 +87,7 @@
         </div>
         <h1 class="text-3xl md:text-5xl font-bold text-textMain mb-4 max-w-4xl leading-tight reveal">Nikmati Layanan <span class="text-primary inline-block">Briwash Cihampelas</span></h1>
         <p class="text-sm md:text-lg text-textMain mb-10 max-w-2xl reveal">Cukup pesan via WhatsApp, tim kami jemput cucian Anda, proses express 3 jam selesai, bersih, rapih dan wangi tanpa repot!</p>
-        <a href="https://api.whatsapp.com/send/?phone=6285187270055&text=Halo+Briwash+Cihampelas%2C%0A%0ASaya+mau+tau+info+laundry%2C+saya+dapat+info+dari+Website+*%28LIST+PRIORITAS%29*&type=phone_number&app_absent=0" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal flex items-center gap-2">
+        <a href="https://api.whatsapp.com/send/?phone=6281120081011&text=Halo+Briwash+Cihampelas%2C%0A%0ASaya+mau+tau+info+laundry%2C+saya+dapat+info+dari+Website+*%28LIST+PRIORITAS%29*&type=phone_number&app_absent=0" target="_blank" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal flex items-center gap-2">
             <i class="fa-brands fa-whatsapp text-lg"></i> Pesan Sekarang
         </a>
     </header>
@@ -282,7 +282,7 @@
         </div>
         
         <div class="flex justify-center mt-12 reveal">
-            <a href="https://api.whatsapp.com/send/?phone=6285187270055&text=Halo+Briwash+Cihampelas%2C%0A%0ASaya+mau+tau+info+laundry%2C+saya+dapat+info+dari+Website+*%28LIST+PRIORITAS%29*&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-secondary text-white font-semibold py-3.5 px-10 rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2 animate-pulse hover:animate-none">
+            <a href="https://api.whatsapp.com/send/?phone=6281120081011&text=Halo+Briwash+Cihampelas%2C%0A%0ASaya+mau+tau+info+laundry%2C+saya+dapat+info+dari+Website+*%28LIST+PRIORITAS%29*&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-secondary text-white font-semibold py-3.5 px-10 rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2 animate-pulse hover:animate-none">
                 <i class="fa-brands fa-whatsapp text-2xl"></i> Pesan Sekarang
             </a>
         </div>
@@ -384,7 +384,7 @@
         </div>
         
         <div class="flex justify-center mt-10 reveal">
-            <a href="https://wa.me/6285187270055" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2">
+            <a href="https://wa.me/6281120081011" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2">
                 <i class="fa-brands fa-whatsapp text-xl"></i> Pesan Sekarang
             </a>
         </div>
@@ -442,6 +442,181 @@
                 <p class="italic text-textMain mb-6 text-sm sm:text-base leading-relaxed break-words">"Servis juara dan satset! Sangat recommended laundry di sini. ⭐️⭐️"</p>
                 <p class="font-bold text-primary">- Rika Mais, Mahasiswa</p>
             </div>
+        </div>
+    </section>
+    
+    <!-- SECTION FORM PICKUP LAUNDRY -->
+    <section id="pickup" class="max-w-7xl mx-auto px-6 py-20 bg-gray-50/30">
+        <div class="reveal">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-textMain mb-2 font-outfit">Form Request Pickup</h2>
+            <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-6"></div>
+            <p class="text-center text-sm text-textLight max-w-2xl mx-auto mb-10">Isi detail di bawah ini, kurir kami akan segera menjemput cucian kotor Anda.</p>
+        </div>
+    
+        <div class="max-w-4xl mx-auto bg-white border border-blue-100 border-t-4 border-t-primary rounded-2xl shadow-lg overflow-hidden reveal">
+            <form id="formPickupLaundry" class="p-6 md:p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- KOLOM KIRI: IDENTITAS (1 Kolom di Mobile & PC) -->
+                    <div class="space-y-5">
+                        <h3 class="font-bold text-primary flex items-center gap-2 border-b border-blue-50 pb-2">
+                            <i class="fas fa-user-circle"></i> Data Identitas
+                        </h3>
+                        
+                        <div>
+                            <label class="block text-xs font-semibold text-textMain mb-1">Nama Lengkap *</label>
+                            <input type="text" id="waNama" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary outline-none transition-all text-sm" placeholder="Contoh: Budi Santoso">
+                        </div>
+    
+                        <div>
+                            <label class="block text-xs font-semibold text-textMain mb-1">Alamat (Sebutkan no. kamar jika hotel/kost) *</label>
+                            <textarea id="waAlamat" required rows="2" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary outline-none transition-all text-sm resize-none" placeholder="Contoh: Jl. Cihampelas No. 10, Kost Kamar 05"></textarea>
+                        </div>
+    
+                        <div>
+                            <label class="block text-xs font-semibold text-textMain mb-1">No. WhatsApp *</label>
+                            <input type="tel" id="waNo" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary outline-none transition-all text-sm" placeholder="Contoh: 08123456789">
+                        </div>
+    
+                        <div>
+                            <label class="block text-xs font-semibold text-textMain mb-1">Waktu Pickup *</label>
+                            <input type="text" id="waWaktu" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary outline-none transition-all text-sm" placeholder="Contoh: Hari ini, Jam 15:00">
+                        </div>
+                    </div>
+    
+                    <!-- KOLOM KANAN: DETAIL CUCIAN -->
+                    <div class="space-y-5">
+                        <h3 class="font-bold text-primary flex items-center gap-2 border-b border-blue-50 pb-2">
+                            <i class="fas fa-tshirt"></i> Detail Cucian
+                        </h3>
+    
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Custom Dropdown: Paket -->
+                            <div class="relative custom-select-wrapper">
+                                <label class="block text-xs font-semibold text-textMain mb-1">Paket Kiloan *</label>
+                                <input type="hidden" id="waPaket" value="-">
+                                <div class="custom-select-trigger w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary outline-none transition-all text-sm bg-white cursor-pointer flex justify-between items-center">
+                                    <span class="selected-text text-gray-400">- Pilih Paket -</span>
+                                    <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                                </div>
+                                <ul class="custom-select-options absolute z-20 w-full bg-white border border-gray-100 rounded-xl mt-1 shadow-xl hidden max-h-48 overflow-y-auto">
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Cuci Kering Lipat">Cuci Kering Lipat</li>
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Cuci Kering Gosok">Cuci Kering Gosok</li>
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Jasa Setrika">Jasa Setrika</li>
+                                </ul>
+                                <!-- Teks Error -->
+                                <p class="error-msg text-red-500 text-[10px] mt-1 hidden animate-pulse"><i class="fas fa-exclamation-circle"></i> Wajib pilih paket atau isi Cuci Satuan</p>
+                            </div>
+    
+                            <!-- Custom Dropdown: Layanan -->
+                            <div class="relative custom-select-wrapper">
+                                <label class="block text-xs font-semibold text-textMain mb-1">Kecepatan Layanan *</label>
+                                <input type="hidden" id="waLayanan" value="-">
+                                <div class="custom-select-trigger w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary outline-none transition-all text-sm bg-white cursor-pointer flex justify-between items-center">
+                                    <span class="selected-text text-gray-400">- Pilih Layanan -</span>
+                                    <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                                </div>
+                                <ul class="custom-select-options absolute z-20 w-full bg-white border border-gray-100 rounded-xl mt-1 shadow-xl hidden max-h-48 overflow-y-auto">
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Reguler">Reguler</li>
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="One Day (24 Jam)">One Day (24 Jam)</li>
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Express (6 Jam)">Express (6 Jam)</li>
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Quick">Quick</li>
+                                </ul>
+                                <!-- Teks Error -->
+                                <p class="error-msg text-red-500 text-[10px] mt-1 hidden"><i class="fas fa-exclamation-circle"></i> Bagian ini wajib diisi</p>
+                            </div>
+                        </div>
+    
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-textMain mb-1">Jumlah *</label>
+                                <input type="text" id="waJumlah" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary outline-none transition-all text-sm" placeholder="Cth: 2 Kantong">
+                            </div>
+                            
+                            <!-- Custom Dropdown: Proses -->
+                            <div class="relative custom-select-wrapper">
+                                <label class="block text-xs font-semibold text-textMain mb-1">Proses Cuci *</label>
+                                <input type="hidden" id="waProses" value="-">
+                                <div class="custom-select-trigger w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary outline-none transition-all text-sm bg-white cursor-pointer flex justify-between items-center">
+                                    <span class="selected-text text-gray-400">- Pilih Proses -</span>
+                                    <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                                </div>
+                                <ul class="custom-select-options absolute z-20 w-full bg-white border border-gray-100 rounded-xl mt-1 shadow-xl hidden max-h-48 overflow-y-auto">
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Gabung Perkantong">Gabung</li>
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Pisah Perkantong">Pisah</li>
+                                </ul>
+                                <!-- Teks Error -->
+                                <p class="error-msg text-red-500 text-[10px] mt-1 hidden"><i class="fas fa-exclamation-circle"></i> Bagian ini wajib diisi</p>
+                            </div>
+                        </div>
+    
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="relative custom-select-wrapper">
+                                <label class="block text-[11px] font-semibold text-textMain mb-1">Ada Barang Berharga? *</label>
+                                <input type="hidden" id="waBerharga" value="-">
+                                <div class="custom-select-trigger w-full px-3 py-2.5 rounded-xl border border-gray-200 focus:border-primary outline-none transition-all text-sm bg-white cursor-pointer flex justify-between items-center">
+                                    <span class="selected-text text-gray-400">- Pilih -</span>
+                                    <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                                </div>
+                                <ul class="custom-select-options absolute z-20 w-full bg-white border border-gray-100 rounded-xl mt-1 shadow-xl hidden max-h-48 overflow-y-auto">
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Tidak">Tidak</li>
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Ya">Ya</li>
+                                </ul>
+                                <p class="error-msg text-red-500 text-[10px] mt-1 hidden"><i class="fas fa-exclamation-circle"></i> Wajib diisi</p>
+                            </div>
+    
+                            <div class="relative custom-select-wrapper">
+                                <label class="block text-[11px] font-semibold text-textMain mb-1">Tas Kembali? *</label>
+                                <input type="hidden" id="waTas" value="-">
+                                <div class="custom-select-trigger w-full px-3 py-2.5 rounded-xl border border-gray-200 focus:border-primary outline-none transition-all text-sm bg-white cursor-pointer flex justify-between items-center">
+                                    <span class="selected-text text-gray-400">- Pilih -</span>
+                                    <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                                </div>
+                                <ul class="custom-select-options absolute z-20 w-full bg-white border border-gray-100 rounded-xl mt-1 shadow-xl hidden max-h-48 overflow-y-auto">
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Ya, Kembali">Ya</li>
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Tidak Kembali">Tidak</li>
+                                </ul>
+                                <p class="error-msg text-red-500 text-[10px] mt-1 hidden"><i class="fas fa-exclamation-circle"></i> Wajib diisi</p>
+                            </div>
+    
+                            <div class="relative custom-select-wrapper">
+                                <label class="block text-[11px] font-semibold text-textMain mb-1">Ada yang Luntur? *</label>
+                                <input type="hidden" id="waLuntur" value="-">
+                                <div class="custom-select-trigger w-full px-3 py-2.5 rounded-xl border border-gray-200 focus:border-primary outline-none transition-all text-sm bg-white cursor-pointer flex justify-between items-center">
+                                    <span class="selected-text text-gray-400">- Pilih -</span>
+                                    <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                                </div>
+                                <ul class="custom-select-options absolute z-20 w-full bg-white border border-gray-100 rounded-xl mt-1 shadow-xl hidden max-h-48 overflow-y-auto">
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Tidak">Tidak</li>
+                                    <li class="px-4 py-2.5 hover:bg-blue-50 hover:text-primary cursor-pointer text-sm transition-colors" data-value="Ya, Ada">Ya</li>
+                                </ul>
+                                <p class="error-msg text-red-500 text-[10px] mt-1 hidden"><i class="fas fa-exclamation-circle"></i> Wajib diisi</p>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <label class="block text-xs font-semibold text-textMain mb-1">Cuci Satuan (Kosongkan jika tidak ada)</label>
+                            <input type="text" id="waSatuan" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary outline-none transition-all text-sm" placeholder="Contoh: 1 Bedcover, 2 Sepatu">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="mt-6">
+                    <label class="block text-xs font-semibold text-textMain mb-1">Catatan Tambahan (Jika ada)</label>
+                    <textarea id="waCatatan" rows="2" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary outline-none transition-all text-sm resize-none" placeholder="Contoh: Tanpa parfum, satuan tidak dihanger tapi dilipat..."></textarea>
+                </div>
+    
+                <div class="mt-6 p-4 bg-blue-50/50 border border-blue-100 rounded-xl">
+                    <h4 class="text-xs font-bold text-red-500 mb-1 flex items-center gap-1"><i class="fas fa-exclamation-triangle"></i> PERHATIAN SEBELUM ORDER</h4>
+                    <p class="text-[11px] text-textLight leading-relaxed">
+                        Dengan order artinya menyetujui <button type="button" onclick="openModal('modalSnk')" class="font-bold text-primary underline cursor-pointer">Syarat dan Ketentuan</button> yang berlaku. Pembayaran hanya via <b>QRIS/CASH di Outlet</b>. Estimasi waktu dimulai setelah pembayaran lunas. Kami tidak bertanggung jawab atas transfer di luar sistem resmi. Komplain wajib menyertakan <b>Video Unboxing</b>.
+                    </p>
+                </div>
+    
+                <button type="submit" class="mt-6 w-full bg-primary hover:bg-secondary text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex justify-center items-center gap-2 text-sm">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Kirim Form via WhatsApp
+                </button>
+            </form>
         </div>
     </section>
 
@@ -532,6 +707,9 @@
                                 </a>
                                 <a href="https://api.whatsapp.com/send/?phone=628112959218&text=Halo+Briwash+Cihampelas%2C%0A%0ASaya+mau+tau+info+laundry%2C+saya+dapat+info+dari+Website+*%28LIST+PRIORITAS%29*&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="text-sm hover:text-primary transition-colors flex items-center gap-1">
                                     Admin 2: <span class="font-semibold underline decoration-blue-200 underline-offset-2">0811-2959-218</span>
+                                </a>
+                                <a href="https://api.whatsapp.com/send/?phone=6281120081011&text=Halo+Briwash+Cihampelas%2C%0A%0ASaya+mau+tau+info+laundry%2C+saya+dapat+info+dari+Website+*%28LIST+PRIORITAS%29*&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="text-sm hover:text-primary transition-colors flex items-center gap-1">
+                                    Admin 3: <span class="font-semibold underline decoration-blue-200 underline-offset-2">0811-2959-218</span>
                                 </a>
                             </div>
                         </li>
